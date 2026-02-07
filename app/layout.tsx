@@ -9,6 +9,9 @@ import {
 } from '@clerk/nextjs'
 import { Geist, Geist_Mono, Space_Grotesk } from "next/font/google";
 import "./globals.css";
+import { SidebarProvider} from "@/components/ui/sidebar";
+import { AppSidebar } from "./(routes)/(root)/components/AppSidebar";
+
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -30,15 +33,10 @@ export default function RootLayout({
       <html lang="en">
         <body
           className={`${spaceGrotesk.variable} antialiased`}>
-            <SignedOut>
-                <SignInButton />
-                <SignUpButton>
-                </SignUpButton>
-              </SignedOut>
-              <SignedIn>
-                <UserButton />
-              </SignedIn>
+            <SidebarProvider>
+            <AppSidebar />
               <main className="flex-1"></main>
+            </SidebarProvider>
             </body>
       </html> 
       {children}
