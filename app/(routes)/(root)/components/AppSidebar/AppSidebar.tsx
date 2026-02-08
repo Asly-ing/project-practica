@@ -41,7 +41,7 @@ export default function AppSidebar() {
                        <SidebarMenuItem key={item.title}>
                         <SidebarMenuButton asChild>
                             <a href={item.url}>
-                                <div className="p-1.8 rounded-lg text-white bg-primary">
+                                <div className="p-1 rounded-lg text-white bg-violet-500">
                                 <item.icon className="w-4 h-4"/>
                                 </div>
                                 {state=== "expanded" && <span>{item.title}</span>}
@@ -60,7 +60,7 @@ export default function AppSidebar() {
                                     href={item.url}
                                         className="hover:bg-auted transition"
                                     >
-                                        <div className="p-1.8 rounded-lg text-white bg-primary">
+                                        <div className="p-1 rounded-lg text-white bg-blue-500">
                                             <item.icon className="w-4 h-4"/>
                                         </div>
                                         {item.title}

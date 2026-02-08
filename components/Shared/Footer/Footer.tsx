@@ -1,0 +1,17 @@
+import Link from "next/dist/client/link";
+
+export  function Footer() {
+  return (<footer className="py-4 px-6 border-t bg-white w-full">
+    <div className="flex justify-between items-center text-sm text-slate-500">
+      <p>© 2026 Platforma de Práctica. Todos los derechos reservados.</p>
+    
+    
+    <div className="flex gap-2 items-center">
+      <Link href="/privacy-policy">Privacidad</Link>
+      <Link href="/terms">Términos de Servicio</Link>
+    </div>
+    </div>
+  </footer>
+  
+  );
+}
