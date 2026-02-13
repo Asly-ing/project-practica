@@ -1,6 +1,6 @@
 import { currentUser } from "@clerk/nextjs/server";
 import { Header } from "./components";
-
+import prisma from "@/lib/prisma";
 
 
 export default async function Teacherpage() {
@@ -9,7 +9,13 @@ export default async function Teacherpage() {
     if(!user){
         return <div>Unauthorized</div>;
     }
-
+    const courses = await prisma.course.findMany({
+        where: {
+            userId: user.id
+        }
+    });
+    
+    console.log(courses);
     return (
         <div>
             <Header />

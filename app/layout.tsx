@@ -12,7 +12,7 @@ import "./globals.css";
 import { SidebarProvider} from "@/components/ui/sidebar";
 import { AppSidebar } from "./(routes)/(root)/components/AppSidebar";
 import { Navbar, Footer } from "@/components/Shared";
-
+import {Toaster} from "@/components/ui/sonner";
 
 
 const spaceGrotesk = Space_Grotesk({
@@ -34,13 +34,18 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body
-          className={`${spaceGrotesk.variable} antialiased`}>
+          className={`${spaceGrotesk.className} antialiased`}>
             <SidebarProvider>
             <AppSidebar />
             <div className="w-full bg-stone-100 flex flex-col min-h-screen">
               <Navbar />
             
               <main className="flex-1">{children}</main>
+              
+              <Toaster>
+                
+              </Toaster>
+
             <Footer />
             </div>
             </SidebarProvider>
