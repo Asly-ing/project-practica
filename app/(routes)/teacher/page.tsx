@@ -1,6 +1,7 @@
 import { currentUser } from "@clerk/nextjs/server";
 import { Header } from "./components";
 import prisma from "@/lib/prisma";
+import { ListCourses } from "./components/ListCourses";
 
 
 export default async function Teacherpage() {
@@ -19,6 +20,7 @@ export default async function Teacherpage() {
     return (
         <div>
             <Header />
+            <ListCourses courses={courses} />
         </div>
     )
 }
